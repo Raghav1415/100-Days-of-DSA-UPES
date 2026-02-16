@@ -17,3 +17,39 @@
 
 // Output:
 // Identity Matrix
+#include <stdio.h>
+
+int main() {
+    int n;
+    if (scanf("%d", &n) != 1) return 1;
+
+    int arr[n][n];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    int is_identity = 1;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i == j) {
+                if (arr[i][j] != 1) {
+                    is_identity = 0;
+                    break;
+                }
+            } else {
+                if (arr[i][j] != 0) {
+                    is_identity = 0;
+                    break;
+                }
+            }
+        }
+        if (!is_identity) break;
+    }
+
+    if (is_identity) printf("Identity Matrix\n");
+    else printf("Not an Identity Matrix\n");
+
+    return 0;
+}
