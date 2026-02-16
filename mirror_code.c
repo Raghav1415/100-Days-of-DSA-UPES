@@ -14,3 +14,24 @@
 // olleh
 
 // Explanation: The first character moves to the last position, the second to the second-last, and so on until the entire string is mirrored
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[1001];
+    if (scanf("%s", s) != 1) return 1;
+
+    int left = 0;
+    int right = strlen(s) - 1;
+
+    while (left < right) {
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+        left++;
+        right--;
+    }
+
+    printf("%s\n", s);
+    return 0;
+}
