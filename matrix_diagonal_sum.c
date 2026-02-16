@@ -19,3 +19,27 @@
 
 // Explanation:
 // 1 + 5 + 9 = 15
+#include <stdio.h>
+
+int main() {
+    int m, n;
+    if (scanf("%d %d", &m, &n) != 2) return 1;
+
+    int arr[m][n];
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    int sum = 0;
+    // Find the smaller dimension to avoid out-of-bounds in non-square matrices
+    int limit = (m < n) ? m : n;
+
+    for (int i = 0; i < limit; i++) {
+        sum += arr[i][i];
+    }
+
+    printf("%d\n", sum);
+    return 0;
+}
