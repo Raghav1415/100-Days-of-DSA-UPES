@@ -60,3 +60,31 @@
 // 5
 // 7
 // 9
+#include <stdio.h>
+
+int main() {
+    int m, n;
+    if (scanf("%d %d", &m, &n) != 2) return 1;
+
+    int a[m][n], b[m][n];
+
+    // Read first matrix
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            scanf("%d", &a[i][j]);
+
+    // Read second matrix
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            scanf("%d", &b[i][j]);
+
+    // Compute and print sum directly to save memory
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d%s", a[i][j] + b[i][j], (j == n - 1) ? "" : " ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
