@@ -20,3 +20,31 @@
 // 10 15 20 25 30 40 50 60 70
 
 // Explanation: Compare the next unprocessed arrival time from both logs and append the earlier one to the final log until all entries are processed
+#include <stdio.h>
+
+int main() {
+    int p, q;
+
+    if (scanf("%d", &p) != 1) return 1;
+    int a[p];
+    for (int i = 0; i < p; i++) scanf("%d", &a[i]);
+
+    if (scanf("%d", &q) != 1) return 1;
+    int b[q];
+    for (int i = 0; i < q; i++) scanf("%d", &b[i]);
+
+    int i = 0, j = 0;
+    while (i < p && j < q) {
+        if (a[i] <= b[j]) {
+            printf("%d ", a[i++]);
+        } else {
+            printf("%d ", b[j++]);
+        }
+    }
+
+    while (i < p) printf("%d%s", a[i++], (i == p && j == q) ? "" : " ");
+    while (j < q) printf("%d%s", b[j++], (j == q) ? "" : " ");
+    
+    printf("\n");
+    return 0;
+}
