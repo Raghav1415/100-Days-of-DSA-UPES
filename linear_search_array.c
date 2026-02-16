@@ -20,3 +20,27 @@
 // Comparisons = 3
 
 // Explanation: Compared with 10, 20, 30 (found at index 2 with 3 comparisons)
+#include <stdio.h>
+
+int main() {
+    int n, k, i, found = 0, count = 0;
+    if (scanf("%d", &n) != 1) return 1;
+
+    int arr[n];
+    for (i = 0; i < n; i++) scanf("%d", &arr[i]);
+    scanf("%d", &k);
+
+    for (i = 0; i < n; i++) {
+        count++;
+        if (arr[i] == k) {
+            printf("Found at index %d\n", i);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) printf("Not Found\n");
+    printf("Comparisons = %d\n", count);
+
+    return 0;
+}
