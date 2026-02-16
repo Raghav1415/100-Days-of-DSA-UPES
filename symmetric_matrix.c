@@ -47,3 +47,35 @@
 // 4 5 6
 // Output:
 // Not a Symmetric Matrix
+#include <stdio.h>
+
+int main() {
+    int m, n;
+    if (scanf("%d %d", &m, &n) != 2) return 1;
+
+    // Gate 1: Must be square
+    if (m != n) {
+        printf("Not a Symmetric Matrix\n");
+        return 0;
+    }
+
+    int arr[m][n];
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    // Gate 2: Element mirror check
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < i; j++) {
+            if (arr[i][j] != arr[j][i]) {
+                printf("Not a Symmetric Matrix\n");
+                return 0;
+            }
+        }
+    }
+
+    printf("Symmetric Matrix\n");
+    return 0;
+}
