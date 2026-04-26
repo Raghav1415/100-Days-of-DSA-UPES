@@ -5,7 +5,7 @@
 // - Second line: n space-separated integers (sorted array)
 
 // Output:
-// - Print unique elements only, space-separated
+//// - Print unique elements only, space-separated
 
 // Example:
 // Input:
