@@ -1,6 +1,6 @@
 // Problem: Perform BFS from a given source using queue.
 
-// Input:
+// //Input:
 // - n
 // - adjacency list
 // - source s
